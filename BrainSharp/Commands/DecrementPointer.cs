@@ -8,5 +8,9 @@ namespace BrainSharp.Commands
 {
     class DecrementPointer: Command
     {
+        public override State Execute(State state)
+        {
+            return state.Locked ? state : new State(state.Array, state.Pointer--, state.Output, false);
+        }
     }
 }

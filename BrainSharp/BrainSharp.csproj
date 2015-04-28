@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BadInterpreter.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandFactory.cs" />
     <Compile Include="Commands\Decrement.cs" />
@@ -51,8 +52,8 @@
     <Compile Include="Commands\JumpBackward.cs" />
     <Compile Include="Commands\JumpForward.cs" />
     <Compile Include="Commands\Output.cs" />
-    <Compile Include="Interpreter.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ObsoleteProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,12 +6,12 @@ namespace Tests
     [TestClass]
     public class Tests
     {
-        private string testFolder = "Test Cases/";
+        private const string TestFolder = "Test Cases/";
 
         [TestMethod]
         public void ExecuteProgram()
         {
-            BrainSharp.Interpreter.Main(new [] {testFolder + "Hello World.txt"});
+            BrainSharp.Program.Main(new [] {TestFolder + "Hello World.txt"});
         }
     }
 }

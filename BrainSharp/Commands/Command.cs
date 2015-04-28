@@ -8,6 +8,6 @@ namespace BrainSharp.Commands
 {
     abstract class Command
     {
-
+        public abstract State Execute(State state);
     }
 }

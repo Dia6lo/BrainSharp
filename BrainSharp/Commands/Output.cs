@@ -8,5 +8,10 @@ namespace BrainSharp.Commands
 {
     class Output: Command
     {
+        public override State Execute(State state)
+        {
+            state.Output += state.Array[state.Pointer];
+            return state;
+        }
     }
 }
