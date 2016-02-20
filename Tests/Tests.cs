@@ -11,7 +11,6 @@ namespace Tests
         [TestMethod]
         public void ExecuteProgram()
         {
-            BrainSharp.Program.Main(new [] {TestFolder + "Hello World.txt"});
         }
     }
 }
