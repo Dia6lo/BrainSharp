@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace BrainSharp.Commands
 {
-    class DecrementPointer: ICommand
+    class IncrementValue: ICommand
     {
         public State Execute(State state)
-        {
-	        state.Pointer--;
-	        return state;
-        }
+		{
+			state.Array[state.Pointer]++;
+			return state;
+		}
     }
 }

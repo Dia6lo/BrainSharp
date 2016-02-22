@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace BrainSharp.Commands
 {
-    class IncrementPointer: Command
+    class IncrementPointer: ICommand
     {
-        public override State Execute(State state)
+        public State Execute(State state)
         {
-            return state.Locked ? state : new State(state.Array, state.Pointer++, state.Output, false);
+	        state.Pointer++;
+	        return state;
         }
     }
 }

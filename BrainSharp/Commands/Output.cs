@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BrainSharp.Commands
 {
-    class Output: Command
+    class Output: ICommand
     {
-        public override State Execute(State state)
+        public State Execute(State state)
         {
             state.Output += state.Array[state.Pointer];
             return state;

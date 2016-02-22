@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace BrainSharp.Commands
 {
-    abstract class Command
+    class DecrementValue: ICommand
     {
-        public abstract State Execute(State state);
+        public State Execute(State state)
+        {
+	        state.Array[state.Pointer]--;
+	        return state;
+        }
     }
 }

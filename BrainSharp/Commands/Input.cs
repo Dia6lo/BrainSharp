@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace BrainSharp.Commands
 {
-    class Input: Command
+    class Input: ICommand
     {
-        public override State Execute(State state)
+        public State Execute(State state)
         {
-            if (state.Locked)
-                return state;
-            var c = Console.ReadKey().KeyChar;
-            var a = state.Array;
-            a[state.Pointer] = c;
-            return new State(a, state.Pointer, state.Output, false);
+	        state.Array[state.Pointer] = Console.ReadKey().KeyChar;
+	        return state;
         }
     }
 }

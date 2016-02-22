@@ -1,18 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BrainSharp.Commands
 {
-    class JumpForward: Command
+    class JumpForward: ICommand
     {
-        public override State Execute(State state)
-        {
-            if (state.Locked)
-                return state;
-            return state.Array[state.Pointer] == 0 ? new State(state.Array, state.Pointer, state.Output, true) : state;
-        }
+	    private readonly Action jumpForward;
+
+		public JumpForward(Action jumpForward)
+		{
+			this.jumpForward = jumpForward;
+		}
+
+	    public State Execute(State state)
+		{
+			if (state.Array[state.Pointer] == 0) {
+				jumpForward();
+			}
+			return state;
+		}
     }
 }
