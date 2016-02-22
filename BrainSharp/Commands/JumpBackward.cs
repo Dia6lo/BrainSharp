@@ -2,7 +2,7 @@
 
 namespace BrainSharp.Commands
 {
-	internal class JumpBackward : ICommand
+	internal class JumpBackward : Command
 	{
 		private readonly Action jumpBackward;
 
@@ -11,7 +11,12 @@ namespace BrainSharp.Commands
 			this.jumpBackward = jumpBackward;
 		}
 
-		public void Execute(State state)
+		public override void Undo(State state)
+		{
+			throw new NotImplementedException();
+		}
+
+		public override void Redo(State state)
 		{
 			if (state.Array[state.Pointer] != 0)
 			{

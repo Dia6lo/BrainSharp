@@ -1,10 +1,8 @@
 ﻿namespace BrainSharp.Commands
 {
-	internal class DecrementPointer : ICommand
+	internal class DecrementPointer : Command
 	{
-		public void Execute(State state)
-		{
-			state.Pointer--;
-		}
+		public override void Undo(State state) => state.Pointer++;
+		public override void Redo(State state) => state.Pointer--;
 	}
 }

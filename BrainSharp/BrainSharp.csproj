@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InstructionMaps\ClassicInstructionMap.cs" />
-    <Compile Include="ICommand.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="Commands\DecrementValue.cs" />
     <Compile Include="Commands\DecrementPointer.cs" />
     <Compile Include="Commands\IncrementValue.cs" />

@@ -8,7 +8,7 @@ namespace BrainSharp
 {
 	public class Interpreter
 	{
-		private readonly Dictionary<Instruction, ICommand> commandDictionary;
+		private readonly Dictionary<Instruction, Command> commandDictionary;
 		private State currentState;
 		private readonly InstructionChain instructionChain;
 		private readonly IInstructionMap instructionMap = new ClassicInstructionMap();
@@ -21,7 +21,7 @@ namespace BrainSharp
 				.Where(i => i != Instruction.Undefined)
 				.ToList();
 			instructionChain = new InstructionChain(instructions);
-			commandDictionary = new Dictionary<Instruction, ICommand>
+			commandDictionary = new Dictionary<Instruction, Command>
 			{
 				{Instruction.IncrementValue, new IncrementValue()},
 				{Instruction.DecrementValue, new DecrementValue()},

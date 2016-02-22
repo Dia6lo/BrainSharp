@@ -12,5 +12,11 @@
 			Pointer = pointer;
 			Output = output;
 		}
+
+		public char Current
+		{
+			get { return Array[Pointer]; }
+			set { Array[Pointer] = value; }
+		}
 	}
 }

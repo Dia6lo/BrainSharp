@@ -1,10 +1,15 @@
 ﻿namespace BrainSharp.Commands
 {
-	internal class Output : ICommand
+	internal class Output : Command
 	{
-		public void Execute(State state)
+		public override void Undo(State state)
 		{
-			state.Output += state.Array[state.Pointer];
+			throw new System.NotImplementedException();
+		}
+
+		public override void Redo(State state)
+		{
+			state.Output += state.Current;
 		}
 	}
 }

@@ -1,10 +1,8 @@
 ﻿namespace BrainSharp.Commands
 {
-	internal class IncrementPointer : ICommand
+	internal class IncrementPointer : Command
 	{
-		public void Execute(State state)
-		{
-			state.Pointer++;
-		}
+		public override void Undo(State state) => state.Pointer--;
+		public override void Redo(State state) => state.Pointer++;
 	}
 }
