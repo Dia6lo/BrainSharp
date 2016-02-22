@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrainSharp", "BrainSharp\BrainSharp.csproj", "{E951FDE5-C389-43A9-ADC8-C43787F5C15A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{B0B1197F-2139-4679-B3ED-BCF8D68B7F8B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "Launcher\Launcher.csproj", "{6E2EA545-A3DF-4CD5-B986-1A7A4B4BC298}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{E951FDE5-C389-43A9-ADC8-C43787F5C15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E951FDE5-C389-43A9-ADC8-C43787F5C15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E951FDE5-C389-43A9-ADC8-C43787F5C15A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0B1197F-2139-4679-B3ED-BCF8D68B7F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0B1197F-2139-4679-B3ED-BCF8D68B7F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0B1197F-2139-4679-B3ED-BCF8D68B7F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0B1197F-2139-4679-B3ED-BCF8D68B7F8B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6E2EA545-A3DF-4CD5-B986-1A7A4B4BC298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6E2EA545-A3DF-4CD5-B986-1A7A4B4BC298}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E2EA545-A3DF-4CD5-B986-1A7A4B4BC298}.Release|Any CPU.ActiveCfg = Release|Any CPU

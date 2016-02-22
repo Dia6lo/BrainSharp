@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BrainSharp.Commands
+﻿namespace BrainSharp.Commands
 {
-    class IncrementValue: ICommand
-    {
-        public State Execute(State state)
+	internal class IncrementValue : ICommand
+	{
+		public State Execute(State state)
 		{
 			state.Array[state.Pointer]++;
 			return state;
 		}
-    }
+	}
 }

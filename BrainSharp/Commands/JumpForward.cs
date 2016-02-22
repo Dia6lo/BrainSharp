@@ -2,21 +2,22 @@
 
 namespace BrainSharp.Commands
 {
-    class JumpForward: ICommand
-    {
-	    private readonly Action jumpForward;
+	internal class JumpForward : ICommand
+	{
+		private readonly Action jumpForward;
 
 		public JumpForward(Action jumpForward)
 		{
 			this.jumpForward = jumpForward;
 		}
 
-	    public State Execute(State state)
+		public State Execute(State state)
 		{
-			if (state.Array[state.Pointer] == 0) {
+			if (state.Array[state.Pointer] == 0)
+			{
 				jumpForward();
 			}
 			return state;
 		}
-    }
+	}
 }

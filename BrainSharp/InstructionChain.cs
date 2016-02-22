@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BrainSharp
 {
-	class InstructionChain
+	internal class InstructionChain
 	{
-		private List<Instruction> instructions;
+		private readonly List<Instruction> instructions;
 		private int pointer;
 
 		public InstructionChain(List<Instruction> instructions)
@@ -16,15 +13,23 @@ namespace BrainSharp
 			this.instructions = instructions;
 		}
 
+		public bool Ended => pointer >= instructions.Count;
+
+		public Instruction Current
+			=> pointer < 0 || pointer >= instructions.Count ? Instruction.Undefined : instructions[pointer];
+
 		public void JumpToLoopEnd()
 		{
-			if (Current != Instruction.LoopStart) {
+			if (Current != Instruction.LoopStart)
+			{
 				throw new Exception();
 			}
 			var loop = 1;
-			while (loop > 0) {
+			while (loop > 0)
+			{
 				pointer++;
-				switch (Current) {
+				switch (Current)
+				{
 					case Instruction.LoopStart:
 						loop++;
 						break;
@@ -39,13 +44,16 @@ namespace BrainSharp
 
 		public void JumpToLoopStart()
 		{
-			if (Current != Instruction.LoopEnd) {
+			if (Current != Instruction.LoopEnd)
+			{
 				throw new Exception();
 			}
 			var loop = 1;
-			while (loop > 0) {
+			while (loop > 0)
+			{
 				pointer--;
-				switch (Current) {
+				switch (Current)
+				{
 					case Instruction.LoopStart:
 						loop--;
 						break;
@@ -63,7 +71,5 @@ namespace BrainSharp
 		{
 			pointer++;
 		}
-
-		public Instruction Current => pointer < 0 || pointer >= instructions.Count ? Instruction.Undefined : instructions[pointer];
 	}
 }

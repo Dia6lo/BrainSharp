@@ -2,9 +2,9 @@
 {
 	internal class State
 	{
-		public char[] Array;
-		public int Pointer;
+		public readonly char[] Array;
 		public string Output;
+		public int Pointer;
 
 		public State(char[] array, int pointer, string output)
 		{

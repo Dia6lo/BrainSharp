@@ -1,10 +1,11 @@
 ﻿namespace BrainSharp.InstructionMaps
 {
-	public class ClassicInstructionMap: IInstructionMap
+	public class ClassicInstructionMap : IInstructionMap
 	{
 		public Instruction GetInstruction(char c)
 		{
-			switch (c) {
+			switch (c)
+			{
 				case '+':
 					return Instruction.IncrementValue;
 				case '-':
