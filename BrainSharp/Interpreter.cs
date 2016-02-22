@@ -40,7 +40,7 @@ namespace BrainSharp
 			while (!instructionChain.Ended)
 			{
 				var command = commandDictionary[instructionChain.Current];
-				currentState = command.Execute(currentState);
+				command.Execute(currentState);
 				instructionChain.Next();
 			}
 			Console.Write(currentState.Output);

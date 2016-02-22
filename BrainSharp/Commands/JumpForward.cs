@@ -11,13 +11,12 @@ namespace BrainSharp.Commands
 			this.jumpForward = jumpForward;
 		}
 
-		public State Execute(State state)
+		public void Execute(State state)
 		{
 			if (state.Array[state.Pointer] == 0)
 			{
 				jumpForward();
 			}
-			return state;
 		}
 	}
 }

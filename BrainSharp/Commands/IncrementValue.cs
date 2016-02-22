@@ -2,10 +2,9 @@
 {
 	internal class IncrementValue : ICommand
 	{
-		public State Execute(State state)
+		public void Execute(State state)
 		{
 			state.Array[state.Pointer]++;
-			return state;
 		}
 	}
 }

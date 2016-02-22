@@ -2,6 +2,6 @@
 {
 	internal interface ICommand
 	{
-		State Execute(State state);
+		void Execute(State state);
 	}
 }

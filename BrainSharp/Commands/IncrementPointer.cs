@@ -2,10 +2,9 @@
 {
 	internal class IncrementPointer : ICommand
 	{
-		public State Execute(State state)
+		public void Execute(State state)
 		{
 			state.Pointer++;
-			return state;
 		}
 	}
 }
