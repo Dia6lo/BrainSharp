@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IInputHandler.cs" />
     <Compile Include="InstructionMaps\ClassicInstructionMap.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Commands\DecrementValue.cs" />

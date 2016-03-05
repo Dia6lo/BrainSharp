@@ -6,11 +6,18 @@ namespace BrainSharp.Commands
 	{
 		private char previousValue;
 		private char inputtedValue;
+		private readonly Func<char?> inputChar;
+
+		public Input(Func<char?> inputChar)
+		{
+			this.inputChar = inputChar;
+		}
 
 		public override void Execute(State state)
 		{
 			previousValue = state.Current;
-			inputtedValue = Console.ReadKey().KeyChar;
+			var input = inputChar();
+			inputtedValue = input ?? (char)0;
 			base.Execute(state);
 		}
 

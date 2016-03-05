@@ -11,10 +11,19 @@ namespace Launcher
 				new Interpreter(
 					"++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.")
 				{
-					OutputHandler = new OutputHandler()
+					OutputHandler = new OutputHandler(),
+					InputHandler = new InputHandler()
 				};
 			interpreter.Interpret();
 			Console.ReadKey();
+		}
+	}
+
+	internal class InputHandler : IInputHandler
+	{
+		public char InputChar()
+		{
+			return Console.ReadKey().KeyChar;
 		}
 	}
 

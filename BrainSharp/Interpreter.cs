@@ -30,7 +30,7 @@ namespace BrainSharp
 					c => {OutputHandler?.OutputChar(c);},
 					() => {OutputHandler?.RemoveChar();}
 					)},
-				{Instruction.Input, new Input()},
+				{Instruction.Input, new Input(() => InputHandler?.InputChar())},
 				{Instruction.LoopStart, new JumpForward(() => { instructionChain.JumpToLoopEnd(); })},
 				{Instruction.LoopEnd, new JumpBackward(() => { instructionChain.JumpToLoopStart(); })},
 				{Instruction.Undefined, null}
@@ -38,6 +38,7 @@ namespace BrainSharp
 		}
 
 		public IOutputHandler OutputHandler { get; set; }
+		public IInputHandler InputHandler { get; set; }
 
 		public void Interpret()
 		{
