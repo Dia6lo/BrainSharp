@@ -2,21 +2,19 @@
 {
 	internal class State
 	{
-		public readonly char[] Array;
-		public string Output;
-		public int Pointer;
+		private readonly char[] array;
 
-		public State(char[] array, int pointer, string output)
+		public State(int arraySize)
 		{
-			Array = array;
-			Pointer = pointer;
-			Output = output;
+			array = new char[arraySize];
 		}
 
 		public char Current
 		{
-			get { return Array[Pointer]; }
-			set { Array[Pointer] = value; }
+			get { return array[Pointer]; }
+			set { array[Pointer] = value; }
 		}
+
+		public int Pointer { get; set; }
 	}
 }

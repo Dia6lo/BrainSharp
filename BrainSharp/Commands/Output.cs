@@ -1,15 +1,26 @@
-﻿namespace BrainSharp.Commands
+﻿using System;
+
+namespace BrainSharp.Commands
 {
 	internal class Output : Command
 	{
+		private readonly Action<char> outputChar;
+		private readonly Action removeChar;
+
+		public Output(Action<char> outputChar, Action removeChar)
+		{
+			this.outputChar = outputChar;
+			this.removeChar = removeChar;
+		}
+
 		public override void Undo(State state)
 		{
-			throw new System.NotImplementedException();
+			removeChar();
 		}
 
 		public override void Redo(State state)
 		{
-			state.Output += state.Current;
+			outputChar(state.Current);
 		}
 	}
 }

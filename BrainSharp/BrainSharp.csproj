@@ -58,6 +58,7 @@
     <Compile Include="Instruction.cs" />
     <Compile Include="InstructionChain.cs" />
     <Compile Include="Interpreter.cs" />
+    <Compile Include="IOutputHandler.cs" />
     <Compile Include="State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

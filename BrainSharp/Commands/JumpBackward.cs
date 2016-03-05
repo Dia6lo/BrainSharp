@@ -18,7 +18,7 @@ namespace BrainSharp.Commands
 
 		public override void Redo(State state)
 		{
-			if (state.Array[state.Pointer] != 0)
+			if (state.Current != 0)
 			{
 				jumpBackward();
 			}

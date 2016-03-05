@@ -9,9 +9,25 @@ namespace Launcher
 		{
 			var interpreter =
 				new Interpreter(
-					"++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.");
+					"++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.")
+				{
+					OutputHandler = new OutputHandler()
+				};
 			interpreter.Interpret();
 			Console.ReadKey();
+		}
+	}
+
+	internal class OutputHandler : IOutputHandler
+	{
+		public void OutputChar(char c)
+		{
+			Console.Write(c);
+		}
+
+		public void RemoveChar()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
