@@ -10,13 +10,12 @@ namespace BrainSharp
 		private readonly Dictionary<Instruction, Command> commandDictionary;
 		private readonly State state;
 		private readonly InstructionChain instructionChain;
-		private readonly IInstructionMap instructionMap = new ClassicInstructionMap();
 
 		public Interpreter(string text, int arraySize = 30000)
 		{
 			state = new State(arraySize);
 			var instructions = text
-				.Select(instructionMap.GetInstruction)
+				.Select(InstructionMap.GetInstruction)
 				.Where(i => i != Instruction.Undefined)
 				.ToList();
 			instructionChain = new InstructionChain(instructions);
@@ -39,6 +38,7 @@ namespace BrainSharp
 
 		public IOutputHandler OutputHandler { get; set; }
 		public IInputHandler InputHandler { get; set; }
+		public IInstructionMap InstructionMap { get; set; } = new ClassicInstructionMap();
 
 		public void Interpret()
 		{

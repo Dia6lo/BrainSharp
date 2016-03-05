@@ -1,6 +1,6 @@
 ﻿namespace BrainSharp
 {
-	internal interface IInstructionMap
+	public interface IInstructionMap
 	{
 		Instruction GetInstruction(char c);
 	}
