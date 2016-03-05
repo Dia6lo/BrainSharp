@@ -8,8 +8,7 @@ namespace Launcher
 		public static void Main()
 		{
 			var interpreter =
-				new Interpreter(
-					"++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.")
+				new Interpreter(Programs.HelloWorld)
 				{
 					OutputHandler = new OutputHandler(),
 					InputHandler = new InputHandler()
